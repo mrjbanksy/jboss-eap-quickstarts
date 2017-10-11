@@ -46,7 +46,7 @@ public class HelloWorld {
 //    }
     
     @GET
-    @Path("headers")
+    @Path("/headers")
     @Produces("application/json")
     public String getHelloWorldJSON(@Context HttpHeaders headers) {
     	
