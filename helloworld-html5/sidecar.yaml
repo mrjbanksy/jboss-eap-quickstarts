@@ -67,7 +67,7 @@ items:
             name: proxy-tls
 
         - name: app
-          image: capstone/helloworld-rolesfa:latest
+          image: capstone/helloworld-roles:latest
         volumes:
         - name: proxy-tls
           secret:
