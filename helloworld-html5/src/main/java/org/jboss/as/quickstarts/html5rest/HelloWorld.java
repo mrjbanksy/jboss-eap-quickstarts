@@ -24,6 +24,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MultivaluedMap;
 
 /**
  * A simple REST service which is able to say hello to someone using HelloService Please take a look at the web.xml where JAX-RS
@@ -41,8 +42,11 @@ public class HelloWorld {
     @Path("/headers")
     @Produces("application/json")
     public String getHelloWorldJSON(@Context HttpHeaders headers) {
-    	
-        return "Headers: " + headers.getRequestHeaders();
+    	MultivaluedMap<String,String> headerMap = headers.getRequestHeaders();
+    	for(String key : headerMap.keySet()){
+    		System.out.println(key);
+    	}
+        return "Headers End";
 //        return "{\"result\":\"" + helloService.createHelloMessage(name) + "\"}";
     }
     
